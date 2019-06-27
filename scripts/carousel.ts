@@ -51,10 +51,12 @@ let stopCarousel = () => {
 }
 
 let resetTiming = () => {
-    clearInterval(timer);
-    timer = setInterval(function () {
-        next();
-    }, 2000)
+    if (!timer == null) {
+        clearInterval(timer);
+        timer = setInterval(function () {
+            next();
+        }, 2000)
+    }
 }
 
 startCarousel();
