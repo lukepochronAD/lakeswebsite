@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Visit Lakeland</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.5/css/bulma.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="node_modules\@fortawesome\fontawesome-free\css\all.css">
+</head>
+
+<body>
+
+  <!--- navbar-->
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false"
+      data-target="navbarBasicExample">
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+      <span aria-hidden="true"></span>
+    </a>
+    </div>
+
+    <div id="navbarBasicExample" class="navbar-menu">
+      <div class="navbar-start">
+        <a class="navbar-item" href="#header">
+          <i class="fas fa-home"></i>&nbsp home</a>
+
+        <a class="navbar-item" href="#gettingthere">
+          <i class="fas fa-suitcase"></i>&nbsp getting there
+        </a>
+
+
+
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link">
+            <i class="fas fa-camera-retro"></i> &nbsp worth seeing
+          </a>
+
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#honister">
+                Honister Slate Mine
+            </a>
+            <a class="navbar-item" href = "#railway">
+                Lakeside and Haverthwaite Railway
+            </a>
+            <a class="navbar-item" href= "#windermere">
+                Windermere
+            </a>
+
+       
+      
+          </div>
+        </div>
+      </div>
+
+      <div class="navbar-end">
+
+        <a class="navbar-item" id="headerToggle">
+          <i class="far fa-eye-slash" id="changeFaIcon"></i>&nbsp <span id="toggleLabel">hide header</span>
+        </a>
+
+        <div class="navbar-item" id="contactus">
+          <a class="navbar-item" href="#contact">
+            <i class="fas fa-envelope"></i> &nbsp contact us
+          </a>
+        </div>
+      </div>
+    </div>
+    </div>
+  </nav>
+
+
+  <section class="hero is-bold is-primary" id="header">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title is-1">Lakeland
+        </h1>
+        <h6 class="title is-6">
+          freshly appointed <div class="tooltip">Unesco<span class="tooltiptext">
+              The UN Educational, Scientific and Cultural Organization awarded Lakes District a World Heritage site
+              status in 2017.</span> </div> World
+          Heritage site
+        </h6>
+      </div>
+    </div>
+  </section>
+
+
+
+  <div class="container">
+    <div class="columns margin10">
+
+      <div class="column auto">
+
+        <div class="container is-fluid is-marginless" id="main">
+
+          <article class="box">
+            <p>The best time to visit Lake District is now. <span id="sunadvice"></span></p>
+          </article>
+
+          <!-- POST     -->
+
+          <article class="box media">
+            <figure class="media-left">
+              <img class="thumbnail image is-128x128" src="images/Brackenthwaite.jpg" alt="" srcset="">
+
+            </figure>
+
+            <div class="media-content">
+              <div class="content">
+                <p>
+                  <strong>Brackenthwaite Hows opened to public by National Trust</strong> <small
+                    class="has-text-grey">independent.co.uk on Wednesday, 5 June 2019</small>
+                  <br><small>
+                    A Lake District viewpoint immortalised by the artist JMW Turner is to be opened up to the public
+                    after
+                    being acquired by the National Trust. It was a popular spot with Lake District tourists in Georgian
+                    and Victorian times, and the view from the hill was captured by the young Turner in a watercolour on
+                    his first visit to the Lake District in 1797.</small>
+                </p>
+              </div>
+              <nav class="level is-mobile">
+                <div class="level-left">
+                  <div class="level-item box" id="counter"><span id="count">0</span></div>
+                  <a class="level-item" id="thumbsup">
+                    <span class="icon is-small"><i class="fas fa-thumbs-up"></i></span>
+                  </a>
+                  <a class="level-item" id="thumbsdown">
+                    <span class="icon is-small"><i class="fas fa-thumbs-down"></i></span>
+                  </a>
+
+                </div>
+              </nav>
+            </div>
+          </article>
+        </div>
+        <!-- POST -->
+      </div>
+      <div class="column is-two-fifths not-selectable">
+
+        <div class="box">
+          <h1 class="subtitle is-4">To do list:</h1>
+          <ul id="tasks" class="aside menu">
+            <label id="t1" class="checkbox">
+              <input type="checkbox">
+              Remember me
+            </label>
+
+          </ul>
+          <hr>
+
+          <div class="field level">
+            <div class="control level-item">
+              <input class="input is-primary" type="text" id="inputDescription" placeholder="your task... ">
+            </div>
+            <div class="control level-right ">
+              <a class="button is-primary" id="todoSubmitButton"><i class="fas fa-plus"></i></a>
+              <a class="button is-primary is-hidden" id="todoSaveButton"><i class="fas fa-check"></i></a>
+              <a class="button is-light is-hidden" id="todoCancelButton"><i class="fas fa-times"></i></a>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- start tiles-->
+  <section class="container margin10">
+
+
+
+    <div class="tile is-ancestor"id = "honister">
+
+        <div class="tile is-parent">
+          <div class="tile is-child box" >
+            <p class="title">Honister Slate Mine</p>
+            <p>Honister Slate Mine is located at the top of Honister Pass and can be reached from the direction of Honister Pass, passing pictureque Buttermere on the way or from the Keswick direction via the Borrowdale valley, passing Derwentwater and the small hamlet of Seatoller.
+            </p>
+          </div>
+        </div>
+        <div class="tile is-4 is-vertical is-parent">
+  
+            <div class="tile is-child box">
+              <figure class="image is-4by3">
+                <img src="https://englishlakes.co.uk/media/5876/via-ferrata-skyline.jpg?anchor=center&mode=crop&width=1008&height=550&rnd=131988526150000000">
+              </figure>
+            </div>
+          </div>
+      </div>
+
+      
+    <div class="tile is-ancestor">
+
+        <div class="tile is-6 is-vertical is-parent">
+  
+            <div class="tile is-child box">
+              <figure class="image is-3by1">
+                <img src="images/nucleusimagery.blob.core.windows.jpg" style = "object-fit: cover; object-position: bottom;">
+              </figure>
+            </div>
+          </div>
+        <div class="tile is-parent" id = "railway">
+          <div class="tile is-child box">
+            <p class="title is-4">Lakeside and Haverthwaite Railway</p>
+            <p>At Lakeside & Haverthwaite Railway travel back in time when you climb aboard our train. A distant memory of bygone years for some and new experience for others, it’s a unique day out for all.</p>
+          </div>
+        </div>
+    
+
+      </div>
+
+      <div class="tile is-ancestor">
+      
+          <div class="tile is-4 is-vertical is-parent"id ="windermere">
+    
+            <div class="tile is-child box">
+              <figure class="image is-4by3">
+                <img src="images/Windermere_Lake_District_from_hill (1).jpeg">
+              </figure>
+            </div>
+          </div>
+          <div class="tile is-parent">
+            <div class="tile is-child box">
+              <p class="title" >Windermere</p>
+              <p>Windermere is a large lake in Cumbria’s Lake District National Park, northwest England. It’s surrounded by
+                mountain peaks and villages, including Bowness-on-Windermere, where The World of Beatrix Potter Attraction
+                has modern displays on the children’s writer. In the north, trails lead to Orrest Head, a hill with views
+                across the lake and the fells beyond, and Holehird Gardens, with their alpines, heathers and shrubs.
+              </p>
+            </div>
+          </div>
+        </div>
+
+
+  </section>
+
+  <!-- end of tiles-->
+  <section class="margin10 container">
+    <div class="columns">
+
+      <div class="column is-half">
+        <div class="container box ">
+          <h1 class="title" id="gettingthere">Getting there</h1>
+          <p>Getting there is fairly straightforward so we wouldn't worry. It is recommended though to use the form
+            below to
+            <b>count your vowels before the travel</b>.</p>
+          <textarea class="textarea is-primary margin10" id="userTextInput" required></textarea>
+
+          <a class="button is-normal is-primary" style="margin-top: 5px;" id="checkVowels"><i
+              class="fas fa-font"></i>&nbsp Count vowels</a>
+          <a class="button is-normal is-primary" style="margin-top: 5px;" id="countWords"><i
+              class="fas fa-align-justify"></i>&nbsp
+            Count words</a>
+          <a class="button is-normal is-warning is-pulled-right" style="margin-top: 5px;" id="clearButton"><i
+              class="fas fa-window-close"></i>&nbsp Clear</a>
+
+          <div class="container margin10" id="result"></div>
+        </div>
+      </div>
+
+
+      <div class="column">
+
+        <div class="container box">
+
+          <img src="images/Walker-in-the-Lake-District.jpg" class="carousel" id="c1" />
+          <img src="images/lakedistrictview.jpg" class="is-hidden carousel" id="c2" />
+          <img src="images/wray.jpg" class="is-hidden carousel" id="c4" />
+
+        </div>
+
+      </div>
+  </section>
+
+
+
+  <article class="message is-info has-background-white border" id="modal">
+    <div class="message-header"> Find us!
+      <a class="delete is-pulled-right" id="closemap"></a>
+    </div>
+
+    <div class="container  margin10">
+
+      <div class="columns">
+
+        <div class="column">
+          <div class="box" id="modalmap">
+            <img src="images/large_map.jpg"></img>
+          </div>
+        </div>
+
+
+        <div class="column is-two-fifths">
+          <div class="container">
+            <p>
+              <h1 class="title is-3">Find us!</h1>
+              <h2 class="subtitle is-5">localhost:8080</h2>
+              Penrith Business Park<br>
+              Unit 353<br>
+              9253 The Avenue<br>
+              Penrith<br>
+              CA10 2AX
+            </p>
+            <i class="fas fa-phone-square-alt margin10"></i> 07911 123456
+            <hr>
+            <p class="margin10"><i>Complaints department is open from 9 to 5.</i></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+  </article>
+
+  <script src="scripts/scripts.js"></script>
+  <script src="scripts/toDoList.js"></script>
+  <script src="scripts/carousel.js"></script>
+</body>
+
+</html>

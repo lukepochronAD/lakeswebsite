@@ -1,0 +1,138 @@
+/**
+ * Styles go here.
+ *
+ * You are allowed to use CSS libraries
+ * like Bulma, Bootstrap, Foundation, etc.
+ *
+ */
+#header{
+  background-size: cover;
+  background-position: center;
+  background-image: url("../images//header.jpg");
+}
+
+.margin10{
+  margin-top: 5vh;
+}
+
+.margin2{
+  margin: 2px 0;
+}
+
+html {
+  overflow-y: auto;
+}
+
+#counter{
+  padding: 2px 6px;
+  font-weight: 700;
+  text-align: center;
+  width: auto;
+  border: 0.5px solid rgb(175, 175, 175);
+  border-radius: 0.2em;
+}
+
+#count{
+  font-size: 0.7em;
+}
+
+.thumbnail{
+  background-size: cover;
+  background-position: center;
+  border-radius: 0.5em;
+}
+
+p{
+  text-align: justify;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 2px dotted rgb(0, 187, 78);
+}
+
+.tooltip .tooltiptext {
+  font-weight: 300;
+  visibility: hidden;
+  width: 22vw;
+  background-color: rgba(0,0,0,0.65);
+  border-radius: 0.5em;
+  color: #fff;
+  text-align: left;
+  padding: 5px 9px;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 2;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.navbar{
+  padding: 0 2vw
+}
+
+#toDoSubmitButton{
+  width: 100%;
+}
+
+.border{
+
+
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+.checkboxlabel{
+  display: inline-block;
+}
+
+.done{
+  text-decoration: line-through;
+  color: lightgrey;
+}
+
+a{
+  color: #777;
+}
+
+.small{
+  font-size: 0.95em;
+}
+
+.not-selectable{
+  user-select: none;
+}
+
+.carousel{
+  width: 100%;
+  object-fit: cover;
+}
+
+
+
+#modal{
+  visibility: hidden;
+  position: fixed;
+  top: 12vh;
+  left: 50%;
+transform: translateX(-50%);
+overflow: hidden;
+height: auto;
+padding-bottom: 5vh;
+width: 80vw;
+}
+
+
+#modalmap{
+
+  object-fit: cover;
+  margin-left: 20px;
+}

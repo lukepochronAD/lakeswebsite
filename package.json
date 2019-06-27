@@ -1,0 +1,22 @@
+{
+  "name": "presentation",
+  "version": "1.0.0",
+  "description": "Presentation for Answer Digital Dev Academy",
+  "main": "index.html",
+  "scripts": {
+    "start": "parcel index.html --port 8080"
+  },
+  "author": "Answer Dev Academy",
+  "license": "MIT",
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^5.9.0",
+    "parcel-bundler": "^1.12.3",
+    "typescript": "^3.5.2"
+  },
+  "dependencies": {
+    "bulma": "^0.7.5",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "images": "^3.0.2"
+  }
+}
