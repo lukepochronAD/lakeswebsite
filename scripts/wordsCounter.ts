@@ -18,18 +18,19 @@ const FormError = (isError = true, differentInput = null) => {
 }
 
 const button = document.getElementById('countWords');
-const words = document.getElementById('userTextInput');
+const words = (<HTMLInputElement>document.getElementById('userTextInput'));
 const outputTo = document.getElementById('result');
 
 document.getElementById("clearButton").addEventListener("click", function () {
    outputTo.innerText = "";
+   FormError(false);
 })
 
 const regex = new RegExp(/\W/g);
 
 button.addEventListener("click", function () {
 
-   let inputString = (<HTMLInputElement>words).value;
+   let inputString = (words).value;
    let total = 0;
    let array = inputString.split(regex);
 

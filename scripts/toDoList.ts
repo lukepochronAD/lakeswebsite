@@ -146,7 +146,7 @@ const editButtons = document.getElementsByClassName('edit');
 
          // populate the edit field with todo #i
          (<HTMLInputElement>inputDescription).value = todos[i][1];
-
+         FormError(false, inputDescription);
          // show the edit buttons
          editMode(true);
          taskInQuestion = i;
@@ -185,6 +185,7 @@ const editButtons = document.getElementsByClassName('edit');
 refresh();
 
 toDoCancelButton.addEventListener("click", function () {
+
    editMode(false);
    (<HTMLInputElement>inputDescription).value = "";
    taskInQuestion = null;
