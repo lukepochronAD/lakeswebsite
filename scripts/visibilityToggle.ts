@@ -1,7 +1,6 @@
-
-    let label = document.getElementById("toggleLabel");
-    let eyeIcon = document.getElementById("changeFaIcon");
-    let header = document.getElementById("header");
+    const label = document.getElementById("toggleLabel");
+    const eyeIcon = document.getElementById("changeFaIcon");
+    const header = document.getElementById("header");
  
     document.getElementById("headerToggle").addEventListener("click", function () {
  
@@ -17,5 +16,5 @@
           eyeIcon.classList.remove("fa-eye");
           eyeIcon.classList.add("fa-eye-slash");
        }
-    })
+    });
  

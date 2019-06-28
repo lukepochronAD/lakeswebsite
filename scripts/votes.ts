@@ -1,7 +1,7 @@
 let score = 5;
-let display = document.getElementById("count");
-let thumbsup = document.getElementById("thumbsup");
-let thumbsdown = document.getElementById("thumbsdown");
+const display = document.getElementById("count");
+const thumbsup = document.getElementById("thumbsup");
+const thumbsdown = document.getElementById("thumbsdown");
 
 thumbsup.addEventListener("click", function () {
    scoreChange(1)
@@ -11,9 +11,9 @@ thumbsdown.addEventListener("click", function () {
    scoreChange(-1)
 });
 
-let scoreChange = (x) => {
+const scoreChange = (x) => {
    score += x;
-   display.innerText = score;
+   display.innerText = String(score);
 
    if (score < 0) {
       display.style.color = '#C81D1D';

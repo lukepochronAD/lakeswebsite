@@ -86,7 +86,6 @@ p{
 
 .border{
 
-
   box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
 }
 
@@ -145,4 +144,10 @@ width: 80vw;
    font-size: 1.5em;
    text-align: center;
    letter-spacing: 10px;
+   margin-top: 1.8vh;
+}
+
+.line-height{
+  height: 1.3em;
+  margin-top: 7px;
 }

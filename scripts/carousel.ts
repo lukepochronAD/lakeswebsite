@@ -1,65 +1,59 @@
-let allPictures = document.getElementsByClassName("carousel");
+const allPictures = document.getElementsByClassName("carousel");
 let currentIndex = 0;
-let toggleVisibility = () => {
+
+const toggleVisibility = () => {
     document.getElementById("stopbutton").classList.toggle("is-hidden");
     document.getElementById("playbutton").classList.toggle("is-hidden");
 };
 
 // prevent tall pictures from stretching the container.
-let height = document.getElementsByClassName("carousel")[0].offsetHeight;
-var style = document.createElement('style');
+const height = (<HTMLElement>document.getElementsByClassName("carousel")[0]).offsetHeight;
+const style = document.createElement('style');
 document.head.appendChild(style);
-console.log(height);
-style.sheet.insertRule(`#carouselcontainer {max-height: ${height - 5}px;}`);
+(<CSSStyleSheet>style.sheet).insertRule(`#carouselcontainer {max-height: ${height - 9}px;}`);
 
-let next = () => {
+const ToggleVisibility = (index) => allPictures[index].classList.toggle('is-hidden');
 
-    allPictures[currentIndex].classList.toggle('is-hidden');
+const next = () => {
+
+    ToggleVisibility(currentIndex);
 
     if (++currentIndex == allPictures.length) {
         currentIndex = 0; // back to square one        
     }
 
-    allPictures[currentIndex].classList.toggle('is-hidden');
+    ToggleVisibility(currentIndex);
 
 }
 
-let previous = () => {
+const previous = () => {
 
-    allPictures[currentIndex].classList.toggle('is-hidden');
-    console.log("hidden" + currentIndex)
+    ToggleVisibility(currentIndex);
 
     if (--currentIndex == -1) {
         currentIndex = allPictures.length - 1; // back to square one        
     }
-    console.log("showing" + currentIndex)
-    allPictures[currentIndex].classList.toggle('is-hidden');
+
+    ToggleVisibility(currentIndex);
 }
 
 let timer;
 
-let startCarousel = () => {
+const startCarousel = () => {
     toggleVisibility();
     timer = setInterval(function () {
         next();
     }, 2100)
 };
 
-let stopCarousel = () => {
+const stopCarousel = () => {
     toggleVisibility();
     clearInterval(timer);
 }
 
-let resetTiming = () => {
-    clearInterval(timer);
-    timer = setInterval(function () {
-        next();
-    }, 2000)
-}
-
 startCarousel();
 
-document.getElementById("fwdbutton").addEventListener("click", function () { next(); resetTiming(); });
-document.getElementById("bwdbutton").addEventListener("click", function () { previous(); resetTiming(); });
+document.getElementById("fwdbutton").addEventListener("click", next);
+document.getElementById("bwdbutton").addEventListener("click", previous);
 document.getElementById("playbutton").addEventListener("click", startCarousel);
 document.getElementById("stopbutton").addEventListener("click", stopCarousel);

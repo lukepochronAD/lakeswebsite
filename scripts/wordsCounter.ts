@@ -1,4 +1,4 @@
-let FormError = (isError = true, differentInput = null) => {
+const FormError = (isError = true, differentInput = null) => {
 
    let input;
    if (differentInput) {
@@ -17,20 +17,21 @@ let FormError = (isError = true, differentInput = null) => {
    }
 }
 
-let button = document.getElementById('countWords');
-let words = document.getElementById('userTextInput');
-let outputTo = document.getElementById('result');
+const button = document.getElementById('countWords');
+const words = (<HTMLInputElement>document.getElementById('userTextInput'));
+const outputTo = document.getElementById('result');
 
 document.getElementById("clearButton").addEventListener("click", function () {
    outputTo.innerText = "";
+   FormError(false);
 })
 
 const regex = new RegExp(/\W/g);
 
 button.addEventListener("click", function () {
 
-   let inputString = words.value;
-
+   let inputString = (words).value;
+   let total = 0;
    let array = inputString.split(regex);
 
    array = array.map(x => x.toString().toLowerCase());
@@ -45,6 +46,7 @@ button.addEventListener("click", function () {
       var y = new Object();
 
       for (let i = 0; i < array2.length; i++) {
+         total++;
          let x = array.pop();
          if (y.hasOwnProperty(x)) {
             y[x] += 1;
@@ -56,5 +58,6 @@ button.addEventListener("click", function () {
       let keys = Object.keys(y).sort();
 
       keys = keys.map(x => `${y[x]} time${y[x] > 1 ? "s" : ""} "<i>${x}</i>"<br>`);
-      outputTo.innerHTML = keys.join("");
+      outputTo.innerHTML = keys.join("") + `<hr><b>total: ${total}</b>`;
    }
+});
