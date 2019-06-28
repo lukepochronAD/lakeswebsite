@@ -1,5 +1,5 @@
 // input validation to be moved into separate module
-let FormError = (isError = true, differentInput = null) => {
+const FormError = (isError = true, differentInput = null) => {
 
    let input;
    if (differentInput) {
@@ -19,16 +19,16 @@ let FormError = (isError = true, differentInput = null) => {
 }
 
 let todos = [];
-let toDoSubmitButton = document.getElementById('todoSubmitButton');
+const toDoSubmitButton = document.getElementById('todoSubmitButton');
 toDoSubmitButton.addEventListener("click", function () {
    addNewItem(inputDescription.value);
 });
-let toDoSaveButton = document.getElementById('todoSaveButton');
-let toDoCancelButton = document.getElementById('todoCancelButton');
-let inputDescription = document.getElementById("inputDescription");
+const toDoSaveButton = document.getElementById('todoSaveButton');
+const toDoCancelButton = document.getElementById('todoCancelButton');
+const inputDescription = document.getElementById("inputDescription");
 let taskInQuestion = null; // for editing
 
-let editMode = (active) => { // visual feedback; toggle the buttons
+const editMode = (active) => { // visual feedback; toggle the buttons
    if (active) {
 
       toDoSubmitButton.classList.add("is-hidden");
@@ -43,7 +43,7 @@ let editMode = (active) => { // visual feedback; toggle the buttons
 };
 
 // CREATE
-let addNewItem = (description) => {
+const addNewItem = (description) => {
    if (!description || !description.match(/\w/)) {
       FormError(true, inputDescription);
    }
@@ -76,7 +76,7 @@ inputDescription.addEventListener("input", function () {
    }
 });
 
-let cookieWrite = () => {
+const cookieWrite = () => {
    document.cookie = JSON.stringify(todos);
 };
 
@@ -105,7 +105,7 @@ todos = undone.concat(done);
 
 
 // generates markup for all TO DO items.
-let refresh = () => {
+const refresh = () => {
 
    let newMarkup = "";
    for (let i = 0; i < todos.length; i++) {
@@ -139,7 +139,7 @@ let refresh = () => {
 
 // UPDATE => set up event listeners for editing.
 
-   let editButtons = document.getElementsByClassName('edit');
+const editButtons = document.getElementsByClassName('edit');
 
    for (let i = 0; i < editButtons.length; i++) {
       editButtons[i].addEventListener("click", function () {
@@ -168,7 +168,7 @@ let refresh = () => {
    }
 
    // DELETE => set up event listeners for deleting
-   let deleteButtons = document.getElementsByClassName('delete');
+   const deleteButtons = document.getElementsByClassName('delete');
    {
       for (let i = 0; i < deleteButtons.length; i++) {
          deleteButtons[i].addEventListener("click", function () {
@@ -180,7 +180,6 @@ let refresh = () => {
          })
       }
    }
-
 }
 
 refresh();
@@ -189,5 +188,4 @@ toDoCancelButton.addEventListener("click", function () {
    editMode(false);
    inputDescription.value = "";
    taskInQuestion = null;
-
 });

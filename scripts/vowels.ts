@@ -1,4 +1,4 @@
-let FormError = (isError = true, differentInput = null) => {
+const FormError = (isError = true, differentInput = null) => {
    
    let input;
    if (differentInput) {

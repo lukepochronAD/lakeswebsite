@@ -1,4 +1,4 @@
-let FormError = (isError = true, differentInput = null) => {
+const FormError = (isError = true, differentInput = null) => {
 
    let input;
    if (differentInput) {
@@ -17,9 +17,9 @@ let FormError = (isError = true, differentInput = null) => {
    }
 }
 
-let button = document.getElementById('countWords');
-let words = document.getElementById('userTextInput');
-let outputTo = document.getElementById('result');
+const button = document.getElementById('countWords');
+const words = document.getElementById('userTextInput');
+const outputTo = document.getElementById('result');
 
 document.getElementById("clearButton").addEventListener("click", function () {
    outputTo.innerText = "";
