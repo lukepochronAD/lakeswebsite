@@ -29,7 +29,7 @@ const regex = new RegExp(/\W/g);
 
 button.addEventListener("click", function () {
 
-   let inputString = words.value;
+   let inputString = (<HTMLInputElement>words).value;
 
    let array = inputString.split(regex);
 
@@ -58,3 +58,4 @@ button.addEventListener("click", function () {
       keys = keys.map(x => `${y[x]} time${y[x] > 1 ? "s" : ""} "<i>${x}</i>"<br>`);
       outputTo.innerHTML = keys.join("");
    }
+});

@@ -2,8 +2,8 @@
 const url = "https://api.sunrise-sunset.org/json?lat=54.3807&lng=-2.9068";
 
 const fixTime = (date) => {
-   x = new Date().getTimezoneOffset() / 60;
-   dateElements = date.split(":");
+   const x = new Date().getTimezoneOffset() / 60;
+   let dateElements = date.split(":");
    dateElements[0] = Number(dateElements[0]) - x;
    return dateElements.join(":");
 }

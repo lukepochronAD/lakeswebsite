@@ -21,7 +21,7 @@ const FormError = (isError = true, differentInput = null) => {
 let todos = [];
 const toDoSubmitButton = document.getElementById('todoSubmitButton');
 toDoSubmitButton.addEventListener("click", function () {
-   addNewItem(inputDescription.value);
+   addNewItem((<HTMLInputElement>inputDescription).value);
 });
 const toDoSaveButton = document.getElementById('todoSaveButton');
 const toDoCancelButton = document.getElementById('todoCancelButton');
@@ -67,7 +67,7 @@ inputDescription.addEventListener("keydown", function (c) {
 
    // basic input validation
 inputDescription.addEventListener("input", function () {
-   if (inputDescription.value == "") {
+   if ((<HTMLInputElement>inputDescription).value == "") {
       FormError(true, inputDescription);
    }
 
@@ -128,8 +128,8 @@ const refresh = () => {
    for (let i = 0; i < checkboxes.length; i++) {
       checkboxes[i].addEventListener("input", function () {
          for (let j = 0; j < todos.length; j++) {
-            currentCheckBox = document.getElementById(`checkbox${j}`);
-            todos[j][0] = currentCheckBox.checked;
+            let currentCheckBox = document.getElementById(`checkbox${j}`);
+            todos[j][0] = (<HTMLInputElement>currentCheckBox).checked;
          }
          cookieWrite();
          refresh();
@@ -145,15 +145,15 @@ const editButtons = document.getElementsByClassName('edit');
       editButtons[i].addEventListener("click", function () {
 
          // populate the edit field with todo #i
-         inputDescription.value = todos[i][1];
+         (<HTMLInputElement>inputDescription).value = todos[i][1];
 
          // show the edit buttons
          editMode(true);
          taskInQuestion = i;
          let modify = () => {
-            if (inputDescription.value) {
+            if ((<HTMLInputElement>inputDescription).value) {
                console.log("editing " + taskInQuestion);
-               todos[taskInQuestion] = [false, inputDescription.value];
+               todos[taskInQuestion] = [false, (<HTMLInputElement>inputDescription).value];
                cookieWrite();
                refresh();
                toDoCancelButton.click();
@@ -186,6 +186,6 @@ refresh();
 
 toDoCancelButton.addEventListener("click", function () {
    editMode(false);
-   inputDescription.value = "";
+   (<HTMLInputElement>inputDescription).value = "";
    taskInQuestion = null;
 });

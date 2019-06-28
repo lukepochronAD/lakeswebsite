@@ -13,7 +13,7 @@ thumbsdown.addEventListener("click", function () {
 
 const scoreChange = (x) => {
    score += x;
-   display.innerText = score;
+   display.innerText = String(score);
 
    if (score < 0) {
       display.style.color = '#C81D1D';

@@ -17,7 +17,7 @@ const FormError = (isError = true, differentInput = null) => {
    }
 }
 
-let input = document.getElementById("userTextInput");
+let input =<HTMLInputElement>document.getElementById("userTextInput");
 
 document.getElementById("clearButton").addEventListener("click", function () {
    input.value = "";
