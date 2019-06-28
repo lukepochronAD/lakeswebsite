@@ -7,11 +7,11 @@ const toggleVisibility = () => {
 };
 
 // prevent tall pictures from stretching the container.
-const height = document.getElementsByClassName("carousel")[0].offsetHeight;
+const height = (<HTMLElement>document.getElementsByClassName("carousel")[0]).offsetHeight;
 const style = document.createElement('style');
 document.head.appendChild(style);
 console.log(height);
-style.sheet.insertRule(`#carouselcontainer {max-height: ${height - 9}px;}`);
+(<CSSStyleSheet>style.sheet).insertRule(`#carouselcontainer {max-height: ${height - 9}px;}`);
 
 const ToggleVisibility = (index) => allPictures[index].classList.toggle('is-hidden');
 

@@ -17,4 +17,3 @@
           eyeIcon.classList.add("fa-eye-slash");
        }
     })
- 

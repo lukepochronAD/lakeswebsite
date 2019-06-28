@@ -29,7 +29,7 @@ const regex = new RegExp(/\W/g);
 
 button.addEventListener("click", function () {
 
-   let inputString = words.value;
+   let inputString = (<HTMLInputElement>words).value;
 
    let array = inputString.split(regex);
 
@@ -44,6 +44,8 @@ button.addEventListener("click", function () {
       let array2 = [...array];
       var y = new Object();
 
+      let sum = 0;
+
       for (let i = 0; i < array2.length; i++) {
          let x = array.pop();
          if (y.hasOwnProperty(x)) {
@@ -51,10 +53,12 @@ button.addEventListener("click", function () {
          } else {
             y[x] = 1;
          }
+         sum ++;
       }
 
       let keys = Object.keys(y).sort();
 
-      keys = keys.map(x => `${y[x]} time${y[x] > 1 ? "s" : ""} "<i>${x}</i>"<br>`);
-      outputTo.innerHTML = keys.join("");
+      keys = keys.map(x => `${y[x]}&nbspx&nbsp"<i>${x}</i>", `);
+      outputTo.innerHTML = keys.join("") + `<br><hr><b>Total word count: ${sum}</b>`;
    }
+});
