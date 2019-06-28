@@ -30,7 +30,7 @@ const regex = new RegExp(/\W/g);
 button.addEventListener("click", function () {
 
    let inputString = (<HTMLInputElement>words).value;
-
+   let total = 0;
    let array = inputString.split(regex);
 
    array = array.map(x => x.toString().toLowerCase());
@@ -45,6 +45,7 @@ button.addEventListener("click", function () {
       var y = new Object();
 
       for (let i = 0; i < array2.length; i++) {
+         total++;
          let x = array.pop();
          if (y.hasOwnProperty(x)) {
             y[x] += 1;
@@ -56,6 +57,6 @@ button.addEventListener("click", function () {
       let keys = Object.keys(y).sort();
 
       keys = keys.map(x => `${y[x]} time${y[x] > 1 ? "s" : ""} "<i>${x}</i>"<br>`);
-      outputTo.innerHTML = keys.join("");
+      outputTo.innerHTML = keys.join("") + `<hr><b>total: ${total}</b>`;
    }
 });
