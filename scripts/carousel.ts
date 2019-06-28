@@ -10,7 +10,6 @@ const toggleVisibility = () => {
 const height = (<HTMLElement>document.getElementsByClassName("carousel")[0]).offsetHeight;
 const style = document.createElement('style');
 document.head.appendChild(style);
-console.log(height);
 (<CSSStyleSheet>style.sheet).insertRule(`#carouselcontainer {max-height: ${height - 9}px;}`);
 
 const ToggleVisibility = (index) => allPictures[index].classList.toggle('is-hidden');

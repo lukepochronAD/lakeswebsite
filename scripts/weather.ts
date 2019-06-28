@@ -17,7 +17,7 @@ const sunInformation = (apiData) => {
    const tooltipinformation = "<span class='tooltiptext'>All this live information comes from external website sunrise-sunset.org</span>";
 
    const output = `This day <div class="tooltip">will be ${Number(dayLengthMinutes) > 0 ? "over " : ""}${dayLengthHours} hours long${tooltipinformation}</div>. `
-      + `The sunrise in Lakes should start from ${fixTime(apiData.sunrise)} and you can expect to see the sunset at ${fixTime(apiData.sunset)}.`;
+      + `The sunrise in Lakes should start at ${fixTime(apiData.sunrise)} and you can expect to see the sunset at ${fixTime(apiData.sunset)}.`;
 
    document.getElementById("sunadvice").innerHTML = output;
 }
